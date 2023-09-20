@@ -23,10 +23,10 @@ int is_delim(char c, char *delim)
 	while (*delim)
 	{
 		if (*delim == c)
-			return 1;
+			return (1);
 		delim++;
 	}
-	return 0;
+	return (0);
 }
 
 /**
@@ -67,7 +67,7 @@ int custom_atoi(char *s)
 	}
 
 	if (sign == -1)
-		return -result;
+		return (-result);
 	else
-		return result;
+		return (result);
 }
