@@ -20,13 +20,13 @@ int myexit(shell_info_t *info)
 			print_error(info, "Illegal number: ");
 			_eputs(info->argv[1]);
 			_eputchar('\n');
-			return 1;
+			return (1);
 		}
 		info->err_num = _erratoi(info->argv[1]);
-		return -2;
+		return (-2);
 	}
-	info->err_num = -1;
-	return -2;
+	info->err_num = (-1);
+	return (-2);
 }
 
 /**
@@ -58,7 +58,7 @@ int mycd(shell_info_t *info)
 		{
 			_puts(current_path);
 			_putchar('\n');
-			return 1;
+			return (1);
 		}
 		_puts(_getenv(info, "OLDPWD=")), _putchar('\n');
 		chdir_ret = chdir((new_path = _getenv(info, "OLDPWD=")) ? new_path : "/");
@@ -75,7 +75,7 @@ int mycd(shell_info_t *info)
 		_setenv(info, "OLDPWD", _getenv(info, "PWD="));
 		_setenv(info, "PWD", getcwd(buffer, 1024));
 	}
-	return 0;
+	return (0);
 }
 
 /**
@@ -93,5 +93,5 @@ int myhelp(shell_info_t *info)
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
 		_puts(*arg_array); /* temp att_unused workaround */
-	return 0;
+	return (0);
 }
