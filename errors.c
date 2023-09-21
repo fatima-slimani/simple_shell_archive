@@ -38,7 +38,7 @@ int my_eputchar(char c)
 	}
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
-	return 1;
+	return (1);
 }
 
 /**
@@ -61,7 +61,7 @@ int my_putfd(char c, int fd)
 	}
 	if (c != BUF_FLUSH)
 		buf[i++] = c;
-	return 1;
+	return (1);
 }
 
 /**
@@ -76,10 +76,10 @@ int my_putsfd(char *str, int fd)
 	int i = 0;
 
 	if (!str)
-		return 0;
+		return (0);
 	while (*str)
 	{
 		i += my_putfd(*str++, fd);
 	}
-	return i;
+	return (i);
 }

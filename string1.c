@@ -12,7 +12,7 @@ char *custom_strcpy(char *destination, char *source)
 	int i = 0;
 
 	if (destination == source || source == NULL)
-		return destination;
+		return (destination);
 
 	while (source[i])
 	{
@@ -21,7 +21,7 @@ char *custom_strcpy(char *destination, char *source)
 	}
 
 	destination[i] = '\0';
-	return destination;
+	return (destination);
 }
 
 /**
@@ -36,19 +36,19 @@ char *custom_strdup(const char *str)
 	char *result;
 
 	if (str == NULL)
-		return NULL;
+		return (NULL);
 
 	while (*str++)
 		length++;
 
 	result = malloc(sizeof(char) * (length + 1));
 	if (!result)
-		return NULL;
+		return (NULL);
 
 	for (length++; length--;)
 		result[length] = *--str;
 
-	return result;
+	return (result);
 }
 
 /**
@@ -90,6 +90,4 @@ int custom_putchar(char c)
 	}
 	if (c != BUF_FLUSH)
 		buffer[i++] = c;
-
-	return 1;
 }
